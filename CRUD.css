@@ -1,0 +1,77 @@
+﻿.form-container {
+    background-color: #f4f8f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+    font-family: Arial, sans-serif;
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        font-weight: bold;
+        font-size: 14px;
+        color: #333;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+.form-value {
+    font-size: 16px;
+    color: #555;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+.btn-danger {
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    margin-right: 10px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+input[type="submit"].btn-primary {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Igual a los botones */
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px; /* Asegúrate que la fuente coincida */
+    text-align: center;
+    display: inline-block;
+    width: auto; /* Se ajusta automáticamente al contenido */
+}
+
+    input[type="submit"].btn-primary:hover {
+        opacity: 0.9; /* Igual que los botones */
+    }
+
+
+    .btn-danger:hover,
+    .btn-secondary:hover {
+        opacity: 0.9;
+    }
