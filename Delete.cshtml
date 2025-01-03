@@ -1,0 +1,48 @@
+﻿@model Clinica.Models.Receta
+
+@{
+    ViewData["Title"] = "Eliminar";
+}
+<head>
+    <link rel="stylesheet" href="~/css/CRUD.css">
+</head>
+
+<h1>Eliminar</h1>
+
+<h4>Receta</h4>
+<hr />
+
+<h4>¿Está seguro que desea eliminar esta receta?</h4>
+
+<div class="form-container">
+
+    <div class="form-group">
+        <label>Fecha:</label>
+        <div class="form-value">
+            @Html.DisplayFor(model => model.Fecha)
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Diagnóstico:</label>
+        <div class="form-value">
+            @Html.DisplayFor(model => model.Diagnostico.DiagnosticoId)
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Usuario:</label>
+        <div class="form-value">
+            @Html.DisplayFor(model => model.IdUsuarioNavigation.Id)
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Paciente:</label>
+        <div class="form-value">
+            @Html.DisplayFor(model => model.Paciente.PacienteId)
+        </div>
+    </div>
+    <form asp-action="Delete" style="text-align: center;">
+        <input type="hidden" asp-for="RecetaId" />
+        <button type="submit" class="btn btn-danger">Eliminar</button>
+        <a asp-action="Index" class="btn btn-secondary">Regresar</a>
+    </form>
+</div>
