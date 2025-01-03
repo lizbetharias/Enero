@@ -1,90 +1,66 @@
-﻿@model Clinica.Models.Receta
+﻿@model Clinica.Models.Paciente
 
 @{
     ViewData["Title"] = "Create";
 }
-<head>
-    <link rel="stylesheet" href="~/css/CRUD.css">
-</head>
+
 <h1>Crear</h1>
 
-<h4>Receta</h4>
+<h4>Paciente</h4>
 <hr />
-<div class="form-container">
+<div class="row">
+    <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Fecha" class="control-label"></label>
-                <input asp-for="Fecha" class="form-control" />
-                <span asp-validation-for="Fecha" class="text-danger"></span>
+                <label asp-for="Nombre" class="control-label"></label>
+                <input asp-for="Nombre" class="form-control" />
+                <span asp-validation-for="Nombre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="PacienteId" class="control-label"></label>
-                <select asp-for="PacienteId" class ="form-control" asp-items="ViewBag.PacienteId"></select>
+                <label asp-for="Apellido" class="control-label"></label>
+                <input asp-for="Apellido" class="form-control" />
+                <span asp-validation-for="Apellido" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="IdUsuario" class="control-label"></label>
-                <select asp-for="IdUsuario" class ="form-control" asp-items="ViewBag.IdUsuario"></select>
+                <label asp-for="FechaNacimiento" class="control-label"></label>
+                <input asp-for="FechaNacimiento" class="form-control" />
+                <span asp-validation-for="FechaNacimiento" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="DiagnosticoId" class="control-label"></label>
-                <select asp-for="DiagnosticoId" class ="form-control" asp-items="ViewBag.DiagnosticoId"></select>
+                <label asp-for="Direccion" class="control-label"></label>
+                <input asp-for="Direccion" class="form-control" />
+                <span asp-validation-for="Direccion" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Telefono" class="control-label"></label>
+                <input asp-for="Telefono" class="form-control" />
+                <span asp-validation-for="Telefono" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Especialidad" class="control-label"></label>
+                <select asp-for="Especialidad" class="form-control">
+                    <option value="Consulta General">Consulta General</option>
+                    <option value="Fisioterapia">Fisioterapia</option>
+                </select>
+                <span asp-validation-for="Especialidad" class="text-danger"></span>
             </div>
             <br />
-            <!-- es para seleccionar que los demas campos de las tablas -->
-       
-            <!-- Lista Temporal de Medicamentos-->
-            <h4>Seleccione los Medicamentos</h4>
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th>Seleccionar</th>
-                        <th>Nombre</th>
-                        <th>Dosis</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    @foreach (var medicamento in ViewBag.Medicamentos)
-                    {
-                        <tr>
-                            <td>
-                                <input type="checkbox" name="MedicamentosSeleccionados" value="@medicamento.MedicamentoId" />
-                            </td>
-                            <td>@medicamento.Nombre</td>
-                            <td>@medicamento.Dosis</td>
-                        </tr>
-                    }
-                </tbody>
-            </table>
-           @*  <h4>Seleccione los Exámenes--------------examenID 
-               <br />
-        <h4>Seleccione los Examenes</h4>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Seleccionar</th>
-                    <th>Nombre</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var examen in ViewBag.Examenes)
-                {
-                    <tr>
-                        <td>
-                            <input type="checkbox" name="ExamenesSeleccionados" value="@examen.ExamenId" />
-                        </td>
-                        <td>@examen.Tipo</td>
-                    </tr>
-                }
-            </tbody>
-        </table>*@
             <div class="form-group">
-            <input type="submit" value="Crear" class="btn btn-primary" />
-            <a asp-action="Index" button type="button" class="btn btn-secondary">Regresar</a>
+                <input type="submit" value="Crear" class="btn btn-primary" />
             </div>
         </form>
     </div>
-
+</div>
+<br />
+<div>
+    <a asp-action="Index" button type="button" class="btn btn-secondary">Regresar</a>
+</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
